@@ -21,7 +21,7 @@ public class TxrServiceImpl implements TxrService {
 
 		Account fromAccount =
 				accountRepository.findById(fromAccNum)
-				.orElseThrow(()->new AccountNotFoundException(fromAccNum + " not exist"));
+				.orElseThrow(()->new AccountNotFoundException("From Account , acc-number - "+fromAccNum + " not exist"));
 		Account toAccount = accountRepository.findById(toAccNum)
 				.orElseThrow(()->new AccountNotFoundException(toAccNum + " not exist"));
 		
